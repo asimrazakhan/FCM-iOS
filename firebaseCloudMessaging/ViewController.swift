@@ -7,8 +7,26 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseInstanceID
+import FirebaseMessaging
+
 
 class ViewController: UIViewController {
+
+    
+    
+    @IBOutlet weak var labelText: UILabel!
+
+    @IBAction func logToken(sender: AnyObject) {
+        // [START get_iid_token]
+        let token = FIRInstanceID.instanceID().token()
+        print("InstanceID token: \(token!)")
+        // [END get_iid_token]
+        
+        // Showing token
+        labelText.text = token
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,4 +40,3 @@ class ViewController: UIViewController {
 
 
 }
-
