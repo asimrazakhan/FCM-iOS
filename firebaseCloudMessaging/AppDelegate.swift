@@ -15,22 +15,24 @@ import FirebaseMessaging
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var userInfo : String?
+    var myViewController: ViewController!
     
         func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+            
             // Register for remote notifications
-            if #available(iOS 8.0, *) {
+            //           if #available(iOS 8.0, *) {
                 // [START register_for_notifications]
                 let settings: UIUserNotificationSettings =
                     UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
                 application.registerUserNotificationSettings(settings)
                 application.registerForRemoteNotifications()
                 // [END register_for_notifications]
-            } else {
+            //} else {
                 // Fallback
-                let types: UIRemoteNotificationType = [.Alert, .Badge, .Sound]
-                application.registerForRemoteNotificationTypes(types)
-            }
+            // let types: UIRemoteNotificationType = [.Alert, .Badge, .Sound]
+            //application.registerForRemoteNotificationTypes(types)
+            //}
             
             FIRApp.configure()
             
@@ -51,9 +53,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Print message ID.
             print("Message ID: \(userInfo["gcm.message_id"]!)")
             
+            print("----------Line Break----------")
+            
             // Print full message.
-            print("%@", userInfo)
-        }
+            print(userInfo)
+            
+            // force typecasting
+//            let message = userInfo["message"] as! String
+            
+            // optional binding
+            if let message = userInfo["message"] {
+                self.userInfo = message as? String
+            }
+            
+            
+    }
         // [END receive_message]
     
     
@@ -82,6 +96,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         func applicationDidBecomeActive(application: UIApplication) {
             connectToFcm()
+            
+            // assigning the value to the label variable
+//            if (self.userInfo != nil) {
+//                myViewController.message.text = self.userInfo
+//            }
         }
         
         // [START disconnect_from_fcm]

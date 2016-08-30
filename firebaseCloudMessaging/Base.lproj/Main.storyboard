@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,19 +18,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhO-Gf-lDM">
-                                <rect key="frame" x="265" y="95" width="71" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhO-Gf-lDM" userLabel="logTokenButton">
+                                <rect key="frame" x="265" y="20" width="71" height="30"/>
                                 <state key="normal" title="Log Token"/>
                                 <connections>
                                     <action selector="logToken:" destination="BYZ-38-t0r" eventType="touchUpInside" id="33h-du-Jt4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3do-wM-Dh1">
-                                <rect key="frame" x="241" y="252" width="118" height="59"/>
+                            <datePicker contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LV1-nt-7mc" userLabel="datePicker">
+                                <rect key="frame" x="140" y="154" width="320" height="216"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="118" id="6jB-pR-I3C"/>
-                                    <constraint firstAttribute="height" constant="59" id="MFr-0Y-Qyn"/>
+                                    <constraint firstAttribute="width" secondItem="LV1-nt-7mc" secondAttribute="height" multiplier="40:27" id="x5l-Zl-0ja"/>
                                 </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="493898214.351776">
+                                    <!--2016-08-26 09:56:54 +0000-->
+                                </date>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="x5l-Zl-0ja"/>
+                                    </mask>
+                                </variation>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pS-fh-7MM">
+                                <rect key="frame" x="238" y="378" width="125" height="30"/>
+                                <state key="normal" title="What day on that?"/>
+                                <connections>
+                                    <action selector="dayToday:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HoO-kC-b8V"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Y3-pT-IOg">
+                                <rect key="frame" x="176" y="101" width="249" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="249" id="QMO-EU-hGD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="twitter" keyboardAppearance="alert" returnKeyType="send"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9E4-8Q-wAG"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Show Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITj-YT-0l6">
+                                <rect key="frame" x="262" y="416" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Object Here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDk-29-7De" customClass="AnyObject">
+                                <rect key="frame" x="231" y="460" width="138" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -37,19 +72,30 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3do-wM-Dh1" secondAttribute="bottom" constant="289" id="YyV-9w-0JK"/>
-                            <constraint firstItem="RhO-Gf-lDM" firstAttribute="centerX" secondItem="3do-wM-Dh1" secondAttribute="centerX" id="dl8-9H-fm2"/>
-                            <constraint firstItem="RhO-Gf-lDM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e8b-lg-VEX"/>
-                            <constraint firstItem="RhO-Gf-lDM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="ynA-EV-KfY"/>
+                            <constraint firstItem="5Y3-pT-IOg" firstAttribute="top" secondItem="RhO-Gf-lDM" secondAttribute="bottom" constant="51" id="4vQ-gP-z3R"/>
+                            <constraint firstItem="ITj-YT-0l6" firstAttribute="top" secondItem="7pS-fh-7MM" secondAttribute="bottom" constant="8" symbolic="YES" id="7Bw-56-Lw9"/>
+                            <constraint firstItem="lDk-29-7De" firstAttribute="top" secondItem="ITj-YT-0l6" secondAttribute="bottom" constant="23" id="DV3-xe-ouO"/>
+                            <constraint firstItem="7pS-fh-7MM" firstAttribute="top" secondItem="LV1-nt-7mc" secondAttribute="bottom" constant="8" symbolic="YES" id="RQJ-4l-a8m"/>
+                            <constraint firstItem="5Y3-pT-IOg" firstAttribute="centerX" secondItem="LV1-nt-7mc" secondAttribute="centerX" id="VaY-7c-yEX"/>
+                            <constraint firstItem="7pS-fh-7MM" firstAttribute="centerX" secondItem="ITj-YT-0l6" secondAttribute="centerX" id="XLr-XG-LKl"/>
+                            <constraint firstItem="ITj-YT-0l6" firstAttribute="centerX" secondItem="lDk-29-7De" secondAttribute="centerX" id="Zbu-xz-PhK"/>
+                            <constraint firstItem="RhO-Gf-lDM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cac-H5-4wa"/>
+                            <constraint firstItem="RhO-Gf-lDM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="d5Y-Ij-9Ju"/>
+                            <constraint firstItem="RhO-Gf-lDM" firstAttribute="centerX" secondItem="5Y3-pT-IOg" secondAttribute="centerX" id="gJR-pg-Ah3"/>
+                            <constraint firstItem="LV1-nt-7mc" firstAttribute="top" secondItem="5Y3-pT-IOg" secondAttribute="bottom" constant="23" id="k5i-Nd-JNN"/>
+                            <constraint firstItem="LV1-nt-7mc" firstAttribute="centerX" secondItem="7pS-fh-7MM" secondAttribute="centerX" id="vB9-oz-Y5g"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="labelText" destination="3do-wM-Dh1" id="eD2-tL-EkI"/>
+                        <outlet property="datePicker" destination="LV1-nt-7mc" id="qh4-pf-ilQ"/>
+                        <outlet property="message" destination="lDk-29-7De" id="YYE-8i-x1U"/>
+                        <outlet property="showDay" destination="ITj-YT-0l6" id="v4k-dI-txa"/>
+                        <outlet property="textBox" destination="5Y3-pT-IOg" id="8Hm-nx-apA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6" y="299"/>
+            <point key="canvasLocation" x="-2862" y="-795"/>
         </scene>
     </scenes>
 </document>
