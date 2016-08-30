@@ -14,43 +14,54 @@ import FirebaseMessaging
 
 class ViewController: UIViewController, UITextFieldDelegate{
     
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-
+//    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//
     @IBOutlet weak var message: UILabel!
-
-    @IBOutlet weak var textBox: UITextField!
+//
+//    @IBOutlet weak var textBox: UITextField!
+//
+//    @IBOutlet weak var datePicker: UIDatePicker!
+//    
+//    @IBOutlet weak var showDay: UILabel!
+//    
+//    
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return false
+//        
+//    }
+//    
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        view.endEditing(true)
+//    }
+//    
+//    
+//    @IBAction func dayToday(sender: AnyObject) {
+//        let chossenDate = self.datePicker.date
+//        let formater = NSDateFormatter()
+//        formater.dateFormat = "EEEE"
+//        
+//        let day = formater.stringFromDate(chossenDate)
+//        let result = "That was a \(day)"
+//        
+//        // creating UI alert controller
+//        showDay.text = result
+////        message.text = appDelegate.userInfo!
+//        
+//        
+//        
+//    }
     
-
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return false
+    @IBAction func pushData(sender: AnyObject) {
         
+        // [Creating database refrence]
+        let ref = FIRDatabase.database().reference()
+        ref.child("OfficeName/callSign@office").setValue("tokenvalue")
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        view.endEditing(true)
+    @IBAction func getData(sender: AnyObject) {
     }
-
-    @IBOutlet weak var datePicker: UIDatePicker!
     
-    @IBOutlet weak var showDay: UILabel!
-    
-    
-    @IBAction func dayToday(sender: AnyObject) {
-        let chossenDate = self.datePicker.date
-        let formater = NSDateFormatter()
-        formater.dateFormat = "EEEE"
-        
-        let day = formater.stringFromDate(chossenDate)
-        let result = "That was a \(day)"
-        
-        // creating UI alert controller
-        showDay.text = result
-//        message.text = appDelegate.userInfo!
-        
-        
-        
-    }
     
     @IBAction func logToken(sender: AnyObject) {
         // [START get_iid_token]

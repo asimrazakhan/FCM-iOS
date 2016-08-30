@@ -15,34 +15,46 @@ import FirebaseMessaging
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var userInfo : String?
+    var userInfo : AnyObject?
+    var ref : Any?
+
     var myViewController: ViewController!
     
         func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
             
             // Register for remote notifications
-            //           if #available(iOS 8.0, *) {
+            if #available(iOS 8.0, *) {
                 // [START register_for_notifications]
-                let settings: UIUserNotificationSettings =
+            let settings: UIUserNotificationSettings =
                     UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-                application.registerUserNotificationSettings(settings)
-                application.registerForRemoteNotifications()
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
                 // [END register_for_notifications]
-            //} else {
-                // Fallback
-            // let types: UIRemoteNotificationType = [.Alert, .Badge, .Sound]
-            //application.registerForRemoteNotificationTypes(types)
-            //}
-            
+            } else {
+                //  Fallback
+            let types: UIRemoteNotificationType = [.Alert, .Badge, .Sound]
+            application.registerForRemoteNotificationTypes(types)
+            }
+    
             FIRApp.configure()
             
             // Add observer for InstanceID token refresh callback.
             NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.tokenRefreshNotification),
                                                              name: kFIRInstanceIDTokenRefreshNotification, object: nil)
             
+            // [Creating database refrence]
+            self.ref = FIRDatabase.database().reference()
+            
+            print(self.ref)
+            
+//            // optional binding
+//            if let message = userInfo!["message"] {
+//                self.userInfo = message as! String
+//            }
+            
             return true
         }
-        
+    
         // [START receive_message]
         func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject],
                          fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
@@ -58,13 +70,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Print full message.
             print(userInfo)
             
+            self.userInfo = userInfo["message"]
+            
             // force typecasting
 //            let message = userInfo["message"] as! String
             
-            // optional binding
-            if let message = userInfo["message"] {
-                self.userInfo = message as? String
-            }
+            
             
             
     }
