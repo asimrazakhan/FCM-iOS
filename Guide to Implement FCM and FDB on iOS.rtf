@@ -1,0 +1,210 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red0\green116\blue0;\red92\green38\blue153;
+\red46\green13\blue110;\red63\green110\blue116;\red38\green71\blue75;\red196\green26\blue22;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid501\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}
+{\list\listtemplateid7\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid601\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid7}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}}
+\margl1440\margr1440\vieww25100\viewh15700\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs48 \cf0 Integrating Procedure of FCM and FDB.\
+
+\b0\fs24 \
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0
+\b\fs36 \cf0 1. FCM\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
+\ls2\ilvl0
+\b0\fs26 \cf0 {\listtext	\'95	}Enable Push notification from Xcode.\
+{\listtext	\'95	}Add the listed pods in the project,\
+\pard\tx720\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf0 \CocoaLigature0 \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\ls3\ilvl0\cf2 {\listtext	\'95	}\cf2 import\cf0  Firebase\
+\ls3\ilvl0\cf2 \CocoaLigature1 {\listtext	\'95	}\CocoaLigature0 import\cf0  FirebaseInstanceID\
+\ls3\ilvl0\cf2 {\listtext	\'95	}import\cf0  FirebaseMessaging\
+\pard\tx720\pardeftab529\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf0 \CocoaLigature1 \
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
+\ls4\ilvl0\cf0 {\listtext	\'95	}Install the pods with the pods install command.\
+{\listtext	\'95	}Generate APN Production certificate for the app from apple\'92s developer account.\
+{\listtext	\'95	}Install the certificate on the system using Keychain.\
+{\listtext	\'95	}Export the (.p12) file from the installed certificate.\
+{\listtext	\'95	}Create new project on Firebase.\
+{\listtext	\'95	}On FCM tab in Firebase upload the production certificate on Firebase.\
+{\listtext	\'95	}Set the Bundle Identifier same as your Buzy Beez Application.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
+\ls5\ilvl0
+\b\fs36 \cf0 Where to Place the Code for FCM in Application:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\b0\fs26 \cf0 \
+
+\b Place inside the \'91didFinishLaunchingWithOptions\'92 in AppDelegate file:
+\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\b\fs36 \cf0 \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf3 \CocoaLigature0 // Register for remote notifications\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf2 let\cf0  settings: \cf4 UIUserNotificationSettings\cf0  =\
+                \cf4 UIUserNotificationSettings\cf0 (forTypes: [.Alert, .Badge, .Sound], categories: \cf2 nil\cf0 )\
+           application.\cf5 registerUserNotificationSettings\cf0 (settings)\
+           application.\cf5 registerForRemoteNotifications\cf0 ()\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf6 FIRApp\cf0 .\cf7 configure\cf0 ()\
+\
+\cf3 // Add observer for InstanceID token refresh callback.\
+\cf4 NSNotificationCenter\cf0 .\cf5 defaultCenter\cf0 ().\cf5 addObserver\cf0 (\cf2 self\cf0 , selector: \cf2 #selector\cf0 (\cf2 self\cf0 .\cf7 tokenRefreshNotification\cf0 ),\
+                                                             name: \cf6 kFIRInstanceIDTokenRefreshNotification\cf0 , object: \cf2 nil\cf0 )\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf0 \CocoaLigature1 \
+\
+
+\b Place inside the AppDelegate file:
+\b0 \
+
+\f1\fs22 \CocoaLigature0 \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf3 // [START receive_message]\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf2 func\cf0  application(application: \cf4 UIApplication\cf0 , didReceiveRemoteNotification userInfo: [\cf4 NSObject\cf0  : \cf4 AnyObject\cf0 ],\
+                         fetchCompletionHandler completionHandler: (\cf4 UIBackgroundFetchResult\cf0 ) -> \cf4 Void\cf0 ) \{\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf3 // If you are receiving a notification message while your app is in the background,\
+// this callback will not be fired till the user taps on the notification launching the application.\
+// TODO: Handle data of notification\
+\
+// Print message ID.\
+\cf5 print\cf0 (\cf8 "Message ID: \cf0 \\\cf8 (\cf0 userInfo[\cf8 "gcm.message_id"\cf0 ]!\cf8 )"\cf0 )
+\f0\b\fs36 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\b0\fs26 \cf0 \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf0 \CocoaLigature0 \}\
+\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf3 // [START refresh_token]\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf2 func\cf0  tokenRefreshNotification(notification: \cf4 NSNotification\cf0 ) \{\
+            \cf2 let\cf0  refreshedToken = \cf6 FIRInstanceID\cf0 .\cf7 instanceID\cf0 ().\cf7 token\cf0 ()!\
+            \cf5 print\cf0 (\cf8 "InstanceID token: \cf0 \\\cf8 (\cf0 refreshedToken\cf8 )"\cf0 )\
+            \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf3 // Connect to FCM since connection may have failed when attempted before having a token.\
+\cf7 connectToFcm\cf0 ()\
+\}\
+\cf3 // [END refresh_token]\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf0     \
+    \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf3 // [START connect_to_fcm]\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf2 func\cf0  connectToFcm() \{\
+            \cf6 FIRMessaging\cf0 .\cf7 messaging\cf0 ().\cf7 connectWithCompletion\cf0  \{ (error) \cf2 in\cf0 \
+                \cf2 if\cf0  (error != \cf2 nil\cf0 ) \{\
+                    \cf5 print\cf0 (\cf8 "Unable to connect with FCM. \cf0 \\\cf8 (\cf0 error\cf8 )"\cf0 )\
+                \} \cf2 else\cf0  \{\
+                    \cf5 print\cf0 (\cf8 "Connected to FCM."\cf0 )\
+                \}\
+            \}\
+\}\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf3 // [END connect_to_fcm]\
+\
+// [START disconnect_from_fcm]\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf2 func\cf0  applicationDidEnterBackground(application: \cf4 UIApplication\cf0 ) \{\
+            \cf6 FIRMessaging\cf0 .\cf7 messaging\cf0 ().\cf7 disconnect\cf0 ()\
+            \cf5 print\cf0 (\cf8 "Disconnected from FCM."\cf0 )\
+\}\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf3 // [END disconnect_from_fcm\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf0 \CocoaLigature1 \
+\
+
+\b Place inside the \'91applicationDidBecomeActive\'92 in AppDelegate file:
+\b0 \
+
+\f1\fs22 \cf3 \CocoaLigature0 \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf7 connectToFcm\cf0 ()\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs26 \cf0 \CocoaLigature1 Place inside the \'91applicationDidEnterBackground\'92 in AppDelegate file:
+\b0 \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf0 \CocoaLigature0 \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf6 FIRMessaging\cf0 .\cf7 messaging\cf0 ().\cf7 disconnect\cf0 ()\
+            \cf5 print\cf0 (\cf8 "Disconnected from FCM."\cf0 )\
+\
+\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
+
+\f0\b\fs36 \cf0 \CocoaLigature1 2. FDB\
+\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
+\ls6\ilvl0
+\b0\fs26 \cf0 {\listtext	\'95	}Add the listed pods in the project,\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\ls7\ilvl0
+\f1\fs22 \cf2 \CocoaLigature0 {\listtext	\'95	}import\cf0  Firebase\
+\pard\tx720\pardeftab529\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf0 \CocoaLigature1 \
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
+\cf0 	\'95	Install the pods with the pods install command.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\b \cf0 Place inside the \'91SignIn\'92 button in ViewController file:\
+
+\b0 \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf3 \CocoaLigature0 // [Creating database refrence]\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf2 let\cf0  ref = \cf6 FIRDatabase\cf0 .\cf7 database\cf0 ().\cf7 reference\cf0 ()\
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf3 // [Setting token to database]\cf0 \
+ref.\cf7 child\cf0 (\cf8 "CYP/125"\cf0 ).\cf7 setValue\cf0 (\cf6 FIRInstanceID\cf0 .\cf7 instanceID\cf0 ().\cf7 token\cf0 ()!)\
+\
+\
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
+
+\f0\b\fs36 \cf0 \CocoaLigature1 END !
+\f1\b0\fs22 \CocoaLigature0 \
+\pard\tx529\pardeftab529\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+}
