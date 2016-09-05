@@ -14,7 +14,7 @@ import FirebaseMessaging
 
 class ViewController: UIViewController, UITextFieldDelegate{
     
-//    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+ let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 //
     @IBOutlet weak var message: UILabel!
 //
@@ -56,7 +56,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         
         // [Creating database refrence]
         let ref = FIRDatabase.database().reference()
-        ref.child("OfficeName/callSign@office").setValue("tokenvalue")
+        ref.child("CYP/125").setValue(FIRInstanceID.instanceID().token()!)
     }
     
     @IBAction func getData(sender: AnyObject) {
